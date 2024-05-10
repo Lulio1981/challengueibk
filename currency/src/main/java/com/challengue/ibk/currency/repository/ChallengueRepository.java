@@ -1,8 +1,9 @@
 package com.challengue.ibk.currency.repository;
 
 import com.challengue.ibk.currency.entity.ChangeCurrency;
-import org.springframework.data.r2dbc.repository.R2dbcRepository;
+import org.springframework.data.repository.reactive.ReactiveCrudRepository;
 
-public interface ChallengueRepository extends R2dbcRepository<ChangeCurrency, Long> {
+
+public interface ChallengueRepository extends ReactiveCrudRepository<ChangeCurrency, Long> {
 
 }
