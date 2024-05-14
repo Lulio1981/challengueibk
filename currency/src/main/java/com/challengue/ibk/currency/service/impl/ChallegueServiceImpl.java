@@ -46,6 +46,17 @@ public class ChallegueServiceImpl implements ChallengueService {
                                 "searchChange.onErrorResume"
                         );
                     }
+                    try {
+                        new BigDecimal(amount);
+                    }catch (Exception e){
+                        throw new BadRequestException(
+                                "ERROR",
+                                "Ha ocurrido un error al obtener importe",
+                                "Importe no válido",
+                                getClass(),
+                                "searchChange.onErrorResume"
+                        );
+                    }
                     ChangeCurrency changeCurrency = ChangeCurrency.builder().amount(new BigDecimal(amount))
                             .change_amount(new BigDecimal(amount)
                                     .multiply(new BigDecimal(exchangeRate)))
